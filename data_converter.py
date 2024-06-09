@@ -8,9 +8,13 @@ import os
 
 target_dataframes = []
 
-path = os.getcwd()
+in_path = os.getenv('PATH_TO_TEST')
+path_parts = in_path.split('/')
+path_parts = path_parts[:-1] + ['numerical_solution']
+out_path = '/'.join(path_parts)
 
-files_path = Path(path).glob('*.csv')
+
+files_path = Path(in_path).glob('*.csv')
 
 time = 0.00
 for file in files_path:
@@ -44,6 +48,8 @@ T, Ux, Uy, Uz, p = (
                    )
 usol = np.array([T, Ux, Uy, Uz, p])
 
+
+os.mkdir(path = path.split('/')
 np.savez('solution.npz',
          x = x,
          y = y,
