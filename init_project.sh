@@ -17,8 +17,7 @@ $PATH_TO_TEST/Allmesh
 $PATH_TO_TEST/Allrun
 
 #Export data from simulation
-pvpython export_date.py
+pvpython paraview.py
 
 #Make data convertion
 python data_converter.py
-
